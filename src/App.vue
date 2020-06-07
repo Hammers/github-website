@@ -2,27 +2,18 @@
   <div id="app">
     <Header @navClicked="bodyComponent = $event"></Header>
     <transition name="slide" mode="out-in" appear>
-      <component :is="bodyComponent"></component>
+      <router-view></router-view>
     </transition>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
-import Games from "./components/Games";
-import Work from "./components/Work";
 
 export default {
   name: 'app',
-  data() {
-    return {
-      bodyComponent: "Work"
-    }
-  },
   components: {
     Header,
-    Work,
-    Games
   }
 }
 </script>
